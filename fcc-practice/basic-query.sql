@@ -1,0 +1,1 @@
+INT                     -- Integers (whole numbers)
