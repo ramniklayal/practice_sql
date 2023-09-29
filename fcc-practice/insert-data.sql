@@ -29,3 +29,8 @@ SET major = 'Biochem'
 WHERE major = 'Bio' OR major = 'Chemistry';                     -- Example of combining two records to single major using OR logic
 
 SELECT * FROM student;
+
+DELETE FROM student;                                            -- Deletes whole table
+
+DELETE FROM student
+WHERE student_id = 5;                                           -- Deletes specific record identified by primary key
