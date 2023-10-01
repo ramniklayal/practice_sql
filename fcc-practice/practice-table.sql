@@ -24,3 +24,7 @@ INSERT INTO csgo VALUES('bobby', 3000, 'entry', 'silver', 50, 'brampton');
 INSERT INTO csgo VALUES('yosimity', 900, 'awp', 'master', 70, 'new york');
 
 INSERT INTO csgo VALUES('pd', 1300, 'postplant', 'master', 85, 'brampton');
+
+UPDATE csgo
+SET mmrank = 'global'
+WHERE hspercent > 70;
