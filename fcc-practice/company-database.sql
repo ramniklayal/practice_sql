@@ -140,3 +140,26 @@ SELECT DISTINCT sex FROM employee;
 
 -- Find all different branches
 SELECT DISTINCT branch_id FROM employee;
+
+SELECT * FROM employee;
+
+
+-- FUNCTIONS (aka Aggregation)
+
+-- Find number of employees
+SELECT COUNT(emp_id) FROM employee;
+
+-- Number of employees with supervisor
+SELECT COUNT(super_id) FROM employee;
+
+-- Number of female emps born after 1970
+SELECT COUNT(emp_id) FROM employee WHERE sex='F' AND birth_day > '1971-01-01';
+
+-- Avg salary of emps
+SELECT AVG(salary) FROM employee;
+
+-- Avg salary of male emps
+SELECT AVG(salary) FROM employee WHERE sex = 'M';
+
+-- Sum of salary of all emps
+SELECT SUM(salary) FROM employee;
