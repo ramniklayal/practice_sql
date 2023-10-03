@@ -163,3 +163,25 @@ SELECT AVG(salary) FROM employee WHERE sex = 'M';
 
 -- Sum of salary of all emps
 SELECT SUM(salary) FROM employee;
+
+-- Aggregation
+-- Find out how many males and females there are
+SELECT COUNT(sex), sex FROM employee GROUP BY sex;
+
+-- Find total sales of each salesman
+SELECT SUM(total_sales), emp_id FROM works_with GROUP BY emp_id;
+
+-- Find total sales to each client
+SELECT SUM(total_sales), client_id FROM works_with GROUP BY client_id;
+
+-- Find any client's who are an LLC
+SELECT * FROM client WHERE client_name LIKE '%LLC';
+
+-- Find any branch suppliers who are in label business
+SELECT * FROM branch_supplier WHERE supplier_name LIKE '%Label%';
+
+-- Find emp born in October
+SELECT * FROM employee WHERE birth_day LIKE '____-10%';
+
+-- Find any clients who are schools
+SELECT * FROM client WHERE client_name LIKE '%school%';
