@@ -118,3 +118,25 @@ INSERT INTO works_with VALUES(102, 406, 15000);
 INSERT INTO works_with VALUES(105, 406, 130000);
 
 SELECT * FROM branch_supplier;
+
+-- More basic queries
+
+SELECT * FROM employee ORDER BY salary DESC;
+
+-- Ordered by sex then name
+SELECT * FROM employee ORDER BY sex, first_name, last_name;
+
+-- Find first 5 employees in table
+SELECT * FROM employee LIMIT 5;
+
+-- First and last names of all employees
+SELECT first_name, last_name FROM employee;
+
+-- Forename and surnames of all employees
+SELECT first_name AS forename, last_name AS surname FROM employee;
+
+-- Find all different genders
+SELECT DISTINCT sex FROM employee;
+
+-- Find all different branches
+SELECT DISTINCT branch_id FROM employee;
