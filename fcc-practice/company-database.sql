@@ -197,3 +197,21 @@ SELECT client_name, client.branch_id FROM client UNION SELECT supplier_name, bra
 SELECT salary FROM employee UNION SELECT total_sales FROM works_with;
 
 -- UNION basically combines results from 2 or more SELECT queries
+
+-- JOINS
+INSERT INTO branch VALUES(4, 'Buffalo', NULL, NULL);
+
+SELECT * FROM branch;
+
+-- Find all branches and the names of their managers
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+JOIN branch    -- LEFT JOIN, RIGHT JOIN
+ON employee.emp_id = branch.mgr_id;
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+ON employee.emp_id = branch.mgr_id;
+-- With LEFT JOIN, the table in the FROM line is the left table and vice versa with RIGHT JOIN
+-- 4th type of join is not possible in mySQL, called FULL OUTER JOIN. Its basically a left and right join combined. E.g. Grabbing both employee and branch table even if not similar columns
