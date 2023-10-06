@@ -144,7 +144,7 @@ SELECT DISTINCT branch_id FROM employee;
 SELECT * FROM employee;
 
 
--- FUNCTIONS (aka Aggregation)
+-- FUNCTIONS (includes Aggregation)
 
 -- Find number of employees
 SELECT COUNT(emp_id) FROM employee;
@@ -185,3 +185,15 @@ SELECT * FROM employee WHERE birth_day LIKE '____-10%';
 
 -- Find any clients who are schools
 SELECT * FROM client WHERE client_name LIKE '%school%';
+
+-- Union
+-- Find a list of employee and branch names
+SELECT first_name AS company_names FROM employee UNION SELECT branch_name FROM branch UNION SELECT client_name FROM client; -- Union can only combine same number of columns, only combine same data types. The first column name shows up as the main column, but AS can change the name in query.
+
+-- Find a list of all clients & branch suppliers' names
+SELECT client_name, client.branch_id FROM client UNION SELECT supplier_name, branch_supplier.branch_id FROM branch_supplier;
+
+-- Find a list of all money spent or earned by the company
+SELECT salary FROM employee UNION SELECT total_sales FROM works_with;
+
+-- UNION basically combines results from 2 or more SELECT queries
